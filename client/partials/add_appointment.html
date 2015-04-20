@@ -1,0 +1,29 @@
+</head>
+<body>
+
+	<div class='container' ng-controller='addApptController' >
+	
+		<h3>New Appointment</h3>
+		<form class="form-inline">
+			  <div class="form-group">
+			    <label for="exampleInputName2">Date</label>
+			    <input type="date" class="form-control" id="exampleInputName2" placeholder="Jane Doe" ng-model='newAppt.date'>
+			  </div>
+			  <div class="form-group">
+			    <label for="exampleInputEmail2">Time</label>
+			    <select ng-model='newAppt.time'>
+			    	<option>8:00 AM</option>
+			    	<option>10:00 AM</option>
+			    	<option>2:00 PM</option>
+			    </select>
+			  </div>
+			  <div class="form-group">
+			    <label for="exampleInputName2">Complain</label>
+			    <textarea class="form-control" rows="3" ng-model='newAppt.complain'></textarea>
+			  </div>
+			  <button class="btn btn-default" ng-click='addAppointment(newAppt)'><a href='#/'>Add Appointment</a></button>
+		</form>
+	</div>
+
+</body>
+</html>

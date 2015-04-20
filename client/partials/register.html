@@ -1,0 +1,60 @@
+
+<style>
+	.white {color: white;}
+</style>
+<body>
+
+	<div class='container' ng-controller='registerController' >
+		<div class="row">
+			  <div class="col-md-4"></div>
+			  <div class="col-md-4">
+			  		<h3>Register for the Algorithms Learning Platform</h3>
+			  		<form>
+			  			<div class="form-group">
+						    <label for="exampleInputEmail1">First Name*</label>
+						    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter your first name" ng-model='user.first_name'>
+						  </div>
+						  <div class="form-group">
+						    <label for="exampleInputEmail1">Last Name*</label>
+						    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter your last name" ng-model='user.last_name'>
+						  </div>
+						  <div class="form-group">
+						    <label for="exampleInputEmail1">User Name*</label>
+						    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter a user handle" ng-model='user.alias'>
+						  </div>
+						  <div class="form-group">
+						    <label for="exampleInputEmail1">Email address*</label>
+						    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email" ng-model='user.email'>
+						  </div>
+						  <div class="form-group">
+						    <label for="exampleInputPassword1">Password* (must be at least 6 characters)</label>
+						    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" ng-model='user.password'>
+						  </div>
+						  <div class="form-group">
+						    <label for="exampleInputPassword1">Confirm Password*</label>
+						    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Confirm Password" ng-model='user.confirm_password'>
+						  </div>
+						  <div class="form-group">
+						    <label for="exampleInputPassword1">Enter Security Question* (will be used to retrieve password)</label>
+						    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Example: What was the name of your first pet?" ng-model='user.security_question'>
+						  </div>
+						  <div class="form-group">
+						    <label for="exampleInputPassword1">Enter Answer to Security Question*</label>
+						    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Example: Rover" ng-model='user.security_answer'>
+						  </div>
+						  <button type="submit" class="btn btn-default btn-primary" ng-click='register()'><a class='white' href='#/register'>Register</a></button>
+					</form>
+					<h5> Already have an account? <a href='#/'>Login</a></h5>
+			  </div>
+			  <div class="col-md-4 btn-warning" ng-show=error()>
+			  	<h5><strong>You have not provided information for all required fields</strong></h5>
+			  	<ul ng-repeat='error in errors'>
+			  		<li>{{error.message}}</li>
+				</ul>
+			  </div>
+		</div>
+		
+	</div>
+
+</body>
+</html>
